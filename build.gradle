@@ -1,0 +1,23 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    group 'net.scaliby'
+    version '0.0.1'
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile "org.codehaus.groovy:groovy-all:2.4.10"
+        compile 'com.google.inject:guice:4.1.0'
+        compile 'log4j:log4j:1.2.17'
+        compile 'cglib:cglib:3.2.5'
+
+        compileOnly 'org.projectlombok:lombok:1.16.18'
+
+        testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+        testCompile 'org.objenesis:objenesis:2.6'
+    }
+}

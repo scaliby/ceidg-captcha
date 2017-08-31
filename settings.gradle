@@ -1,0 +1,3 @@
+rootProject.name = 'ceidg-captcha'
+
+include 'ceidg-captcha-downloader'

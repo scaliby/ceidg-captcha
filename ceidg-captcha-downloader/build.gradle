@@ -1,0 +1,6 @@
+sourceCompatibility = 1.8
+
+dependencies {
+    compile 'org.apache.httpcomponents:httpclient:4.5.3'
+    compile 'org.jsoup:jsoup:1.9.1'
+}
