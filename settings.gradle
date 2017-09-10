@@ -1,3 +1,5 @@
 rootProject.name = 'ceidg-captcha'
 
 include 'ceidg-captcha-downloader'
+include 'ceidg-captcha-machine-learning'
+
