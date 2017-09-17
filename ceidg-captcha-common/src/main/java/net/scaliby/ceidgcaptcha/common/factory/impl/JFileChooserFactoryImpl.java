@@ -1,6 +1,6 @@
-package net.scaliby.ceidgcaptcha.downloader.factory.impl;
+package net.scaliby.ceidgcaptcha.common.factory.impl;
 
-import net.scaliby.ceidgcaptcha.downloader.factory.JFileChooserFactory;
+import net.scaliby.ceidgcaptcha.common.factory.JFileChooserFactory;
 
 import javax.swing.*;
 

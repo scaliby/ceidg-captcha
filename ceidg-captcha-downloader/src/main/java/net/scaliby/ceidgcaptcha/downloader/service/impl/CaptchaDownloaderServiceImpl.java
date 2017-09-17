@@ -3,10 +3,10 @@ package net.scaliby.ceidgcaptcha.downloader.service.impl;
 import lombok.extern.log4j.Log4j;
 import net.scaliby.ceidgcaptcha.downloader.common.CEIDGClient;
 import net.scaliby.ceidgcaptcha.downloader.common.CaptchaLabeler;
-import net.scaliby.ceidgcaptcha.downloader.common.CaptchaStoreChooser;
+import net.scaliby.ceidgcaptcha.common.common.StoreChooser;
 import net.scaliby.ceidgcaptcha.downloader.common.ImageWriter;
 import net.scaliby.ceidgcaptcha.downloader.exception.CaptchaLabelingException;
-import net.scaliby.ceidgcaptcha.downloader.exception.ImageStoreException;
+import net.scaliby.ceidgcaptcha.common.exception.ImageStoreException;
 import net.scaliby.ceidgcaptcha.downloader.factory.ImageStoreFactory;
 import net.scaliby.ceidgcaptcha.downloader.resource.CEIDGCaptchaSessionResource;
 import net.scaliby.ceidgcaptcha.downloader.service.CaptchaDownloaderService;
@@ -19,21 +19,22 @@ import java.io.File;
 public class CaptchaDownloaderServiceImpl implements CaptchaDownloaderService {
 
     private final CaptchaLabeler captchaLabeler;
-    private final CaptchaStoreChooser captchaStoreChooser;
+    private final StoreChooser storeChooser;
     private final CEIDGClient ceidgClient;
     private final ImageStoreFactory imageStoreFactory;
     private final ImageWriter imageWriter;
 
     @Inject
-    public CaptchaDownloaderServiceImpl(CaptchaLabeler captchaLabeler, CaptchaStoreChooser captchaStoreChooser, CEIDGClient ceidgClient,
+    public CaptchaDownloaderServiceImpl(CaptchaLabeler captchaLabeler, StoreChooser storeChooser, CEIDGClient ceidgClient,
                                         ImageStoreFactory imageStoreFactory, ImageWriter imageWriter) {
         this.captchaLabeler = captchaLabeler;
-        this.captchaStoreChooser = captchaStoreChooser;
+        this.storeChooser = storeChooser;
         this.ceidgClient = ceidgClient;
         this.imageStoreFactory = imageStoreFactory;
         this.imageWriter = imageWriter;
     }
 
+    @Override
     public void downloadCaptchaImages(int imagesCount, String format) {
         CEIDGCaptchaSessionResource session = ceidgClient.generateSession();
         File imageStore = getStore(session);
@@ -41,7 +42,7 @@ public class CaptchaDownloaderServiceImpl implements CaptchaDownloaderService {
     }
 
     private File getStore(CEIDGCaptchaSessionResource session) {
-        File storeBasePath = captchaStoreChooser.getDirectory()
+        File storeBasePath = storeChooser.getDirectory()
                 .orElseThrow(() -> new ImageStoreException("No store selected"));
 
         BufferedImage imageToLabel = ceidgClient.getCaptchaImage(session);

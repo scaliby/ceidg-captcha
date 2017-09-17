@@ -2,10 +2,10 @@ package net.scaliby.ceidgcaptcha.downloader.service.impl
 
 import net.scaliby.ceidgcaptcha.downloader.common.CEIDGClient
 import net.scaliby.ceidgcaptcha.downloader.common.CaptchaLabeler
-import net.scaliby.ceidgcaptcha.downloader.common.CaptchaStoreChooser
+import net.scaliby.ceidgcaptcha.common.common.StoreChooser
 import net.scaliby.ceidgcaptcha.downloader.common.ImageWriter
 import net.scaliby.ceidgcaptcha.downloader.exception.CaptchaLabelingException
-import net.scaliby.ceidgcaptcha.downloader.exception.ImageStoreException
+import net.scaliby.ceidgcaptcha.common.exception.ImageStoreException
 import net.scaliby.ceidgcaptcha.downloader.factory.ImageStoreFactory
 import net.scaliby.ceidgcaptcha.downloader.resource.CEIDGCaptchaSessionResource
 import spock.lang.Specification
@@ -15,7 +15,7 @@ import java.awt.image.BufferedImage
 class CaptchaDownloaderServiceImplTest extends Specification {
 
     def captchaLabeler = Mock(CaptchaLabeler)
-    def captchaStoreChooser = Mock(CaptchaStoreChooser)
+    def captchaStoreChooser = Mock(StoreChooser)
     def ceidgClient = Mock(CEIDGClient)
     def imageStoreFactory = Mock(ImageStoreFactory)
     def imageWriter = Mock(ImageWriter)

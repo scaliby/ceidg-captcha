@@ -1,4 +1,4 @@
-package net.scaliby.ceidgcaptcha.downloader.exception;
+package net.scaliby.ceidgcaptcha.common.exception;
 
 public class ImageStoreException extends RuntimeException {
 

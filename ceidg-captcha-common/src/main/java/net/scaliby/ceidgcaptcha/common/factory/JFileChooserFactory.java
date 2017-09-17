@@ -1,4 +1,4 @@
-package net.scaliby.ceidgcaptcha.downloader.factory;
+package net.scaliby.ceidgcaptcha.common.factory;
 
 import javax.swing.*;
 

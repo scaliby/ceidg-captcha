@@ -1,7 +1,7 @@
 package net.scaliby.ceidgcaptcha.downloader.common.impl;
 
 import net.scaliby.ceidgcaptcha.downloader.common.ImageWriter;
-import net.scaliby.ceidgcaptcha.downloader.exception.ImageStoreException;
+import net.scaliby.ceidgcaptcha.common.exception.ImageStoreException;
 
 import javax.imageio.ImageIO;
 import java.awt.image.RenderedImage;

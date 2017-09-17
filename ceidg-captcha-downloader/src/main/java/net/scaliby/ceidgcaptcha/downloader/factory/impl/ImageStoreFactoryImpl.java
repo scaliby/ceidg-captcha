@@ -1,6 +1,6 @@
 package net.scaliby.ceidgcaptcha.downloader.factory.impl;
 
-import net.scaliby.ceidgcaptcha.downloader.exception.ImageStoreException;
+import net.scaliby.ceidgcaptcha.common.exception.ImageStoreException;
 import net.scaliby.ceidgcaptcha.downloader.factory.ImageStoreFactory;
 
 import java.io.File;

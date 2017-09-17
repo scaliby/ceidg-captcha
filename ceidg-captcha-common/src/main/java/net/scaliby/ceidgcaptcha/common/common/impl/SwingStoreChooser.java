@@ -1,19 +1,19 @@
-package net.scaliby.ceidgcaptcha.downloader.common.impl;
+package net.scaliby.ceidgcaptcha.common.common.impl;
 
-import net.scaliby.ceidgcaptcha.downloader.common.CaptchaStoreChooser;
-import net.scaliby.ceidgcaptcha.downloader.factory.JFileChooserFactory;
+import net.scaliby.ceidgcaptcha.common.common.StoreChooser;
+import net.scaliby.ceidgcaptcha.common.factory.JFileChooserFactory;
 
 import javax.inject.Inject;
 import javax.swing.*;
 import java.io.File;
 import java.util.Optional;
 
-public class SwingCaptchaStoreChooser implements CaptchaStoreChooser {
+public class SwingStoreChooser implements StoreChooser {
 
     private final JFileChooserFactory jFileChooserFactory;
 
     @Inject
-    public SwingCaptchaStoreChooser(JFileChooserFactory jFileChooserFactory) {
+    public SwingStoreChooser(JFileChooserFactory jFileChooserFactory) {
         this.jFileChooserFactory = jFileChooserFactory;
     }
 

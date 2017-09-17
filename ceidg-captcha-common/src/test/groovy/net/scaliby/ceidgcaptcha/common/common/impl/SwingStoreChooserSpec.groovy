@@ -1,14 +1,14 @@
-package net.scaliby.ceidgcaptcha.downloader.common.impl
+package net.scaliby.ceidgcaptcha.common.common.impl
 
-import net.scaliby.ceidgcaptcha.downloader.factory.JFileChooserFactory
+import net.scaliby.ceidgcaptcha.common.factory.JFileChooserFactory
 import spock.lang.Specification
 
 import javax.swing.*
 
-class SwingCaptchaStoreChooserSpec extends Specification {
+class SwingStoreChooserSpec extends Specification {
 
     def jFileChooserFactory = Mock(JFileChooserFactory)
-    def chooser = new SwingCaptchaStoreChooser(jFileChooserFactory)
+    def chooser = new SwingStoreChooser(jFileChooserFactory)
 
     def "opening dialog with APPROVE_OPTION result should return optional with selected file"() {
         given:
