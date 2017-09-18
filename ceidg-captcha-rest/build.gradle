@@ -1,0 +1,19 @@
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+mainClassName = "net.scaliby.ceidgcaptcha.rest.CEIDGCaptchaRestMain"
+
+dependencies {
+    compile 'org.deeplearning4j:deeplearning4j-core:0.7.2'
+    compile 'org.nd4j:nd4j-native-platform:0.7.2'
+    compile 'io.ratpack:ratpack-core:1.5.0'
+    compile 'io.ratpack:ratpack-guice:1.5.0'
+    compile 'org.slf4j:slf4j-log4j12:1.7.5'
+    // https://mvnrepository.com/artifact/io.ratpack/ratpack-test
+    compile group: 'io.ratpack', name: 'ratpack-test', version: '1.5.0'
+
+
+    compile project(":ceidg-captcha-common")
+    compile project(":ceidg-captcha-machine-learning")
+}

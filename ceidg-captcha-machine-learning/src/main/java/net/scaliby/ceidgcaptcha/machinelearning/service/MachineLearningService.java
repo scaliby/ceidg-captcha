@@ -1,6 +1,6 @@
 package net.scaliby.ceidgcaptcha.machinelearning.service;
 
-import net.scaliby.ceidgcaptcha.machinelearning.model.NetworkStatisticsResource;
+import net.scaliby.ceidgcaptcha.machinelearning.resource.NetworkStatisticsResource;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 
 public interface MachineLearningService {

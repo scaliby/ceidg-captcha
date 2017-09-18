@@ -1,7 +1,9 @@
 package net.scaliby.ceidgcaptcha.machinelearning.factory.impl;
 
+import lombok.Setter;
 import net.scaliby.ceidgcaptcha.machinelearning.factory.MultiLayerConfigurationFactory;
-import net.scaliby.ceidgcaptcha.machinelearning.model.NetworkConfigurationResource;
+import net.scaliby.ceidgcaptcha.machinelearning.resource.ImageTransformConfigurationResource;
+import net.scaliby.ceidgcaptcha.machinelearning.resource.NetworkConfigurationResource;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
@@ -14,24 +16,34 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class MultiLayerConfigurationFactoryImpl implements MultiLayerConfigurationFactory {
 
+    private static final int SEED = 1337;
+
+    @Setter
+    @Inject
+    @Named("application.seed")
+    private int seed = SEED;
+    private final ImageTransformConfigurationResource imageTransformConfigurationResource;
     private final NetworkConfigurationResource networkConfigurationResource;
 
     @Inject
-    public MultiLayerConfigurationFactoryImpl(NetworkConfigurationResource networkConfigurationResource) {
+    public MultiLayerConfigurationFactoryImpl(ImageTransformConfigurationResource imageTransformConfigurationResource,
+                                              NetworkConfigurationResource networkConfigurationResource) {
         this.networkConfigurationResource = networkConfigurationResource;
+        this.imageTransformConfigurationResource = imageTransformConfigurationResource;
     }
 
     @Override
     public MultiLayerConfiguration create() {
-        int width = networkConfigurationResource.getScaledWidth();
-        int height = networkConfigurationResource.getScaledHeight();
-        int channels = networkConfigurationResource.getChannels();
+        int width = imageTransformConfigurationResource.getScaledWidth();
+        int height = imageTransformConfigurationResource.getScaledHeight();
+        int channels = imageTransformConfigurationResource.getChannels();
         int outputs = networkConfigurationResource.getOutputs();
         return new NeuralNetConfiguration.Builder()
-                .seed(networkConfigurationResource.getSeed())
+                .seed(seed)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .iterations(1)
                 .learningRate(0.0001)

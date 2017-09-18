@@ -11,7 +11,7 @@ public class CEIDGCaptchaDownloaderMain {
 
     public static void main(String[] args) throws IOException {
         Injector injector = Guice.createInjector(
-                new CEIDGCaptchaPropertiesModule("application.properties"),
+                new CEIDGCaptchaPropertiesModule(),
                 new CEIDGCaptchaCommonModule(),
                 new CEIDGCaptchaDownloaderModule()
         );

@@ -1,9 +1,9 @@
 package net.scaliby.ceidgcaptcha.machinelearning.service.impl
 
 import net.scaliby.ceidgcaptcha.machinelearning.factory.DataSetIteratorFactory
-import net.scaliby.ceidgcaptcha.machinelearning.model.InputSplitResource
-import net.scaliby.ceidgcaptcha.machinelearning.model.NetworkConfigurationResource
-import net.scaliby.ceidgcaptcha.machinelearning.model.NetworkStatisticsResource
+import net.scaliby.ceidgcaptcha.machinelearning.resource.InputSplitResource
+import net.scaliby.ceidgcaptcha.machinelearning.resource.NetworkConfigurationResource
+import net.scaliby.ceidgcaptcha.machinelearning.resource.NetworkStatisticsResource
 import net.scaliby.ceidgcaptcha.machinelearning.service.InputSplitService
 import org.datavec.api.split.InputSplit
 import org.deeplearning4j.eval.Evaluation

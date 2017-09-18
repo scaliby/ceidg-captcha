@@ -11,7 +11,7 @@ public class CEIDGCaptchaMachineLearningMain {
         Injector injector = Guice.createInjector(
                 new CEIDGCaptchaMachineLearningModule(),
                 new CEIDGCaptchaCommonModule(),
-                new CEIDGCaptchaPropertiesModule("application.properties")
+                new CEIDGCaptchaPropertiesModule()
         );
         injector.getInstance(CEIDGCaptchaMachineLearningRunner.class).run();
     }

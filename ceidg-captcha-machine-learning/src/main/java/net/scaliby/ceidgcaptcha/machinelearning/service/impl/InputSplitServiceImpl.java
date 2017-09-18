@@ -4,7 +4,7 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import net.scaliby.ceidgcaptcha.common.common.StoreChooser;
 import net.scaliby.ceidgcaptcha.common.exception.ImageStoreException;
-import net.scaliby.ceidgcaptcha.machinelearning.model.InputSplitResource;
+import net.scaliby.ceidgcaptcha.machinelearning.resource.InputSplitResource;
 import net.scaliby.ceidgcaptcha.machinelearning.service.InputSplitService;
 import org.datavec.api.io.filters.BalancedPathFilter;
 import org.datavec.api.io.labels.PathLabelGenerator;

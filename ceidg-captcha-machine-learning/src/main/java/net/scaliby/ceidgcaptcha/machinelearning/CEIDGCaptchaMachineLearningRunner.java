@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j;
 import net.scaliby.ceidgcaptcha.machinelearning.common.MultiLayerNetworkSaver;
 import net.scaliby.ceidgcaptcha.machinelearning.factory.MultiLayerConfigurationFactory;
 import net.scaliby.ceidgcaptcha.machinelearning.factory.MultiLayerNetworkFactory;
-import net.scaliby.ceidgcaptcha.machinelearning.model.NetworkStatisticsResource;
+import net.scaliby.ceidgcaptcha.machinelearning.resource.NetworkStatisticsResource;
 import net.scaliby.ceidgcaptcha.machinelearning.service.MachineLearningService;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;

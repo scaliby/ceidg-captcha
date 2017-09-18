@@ -13,7 +13,7 @@ public class RandomProvider implements Provider<Random> {
 
     @Setter
     @Inject(optional = true)
-    @Named("application.network.seed")
+    @Named("application.seed")
     private int seed = SEED;
 
     @Override
