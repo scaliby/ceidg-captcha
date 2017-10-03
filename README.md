@@ -5,7 +5,7 @@ CEDIG Captcha is a captcha located on [CEIDG Site](https://prod.ceidg.gov.pl/cei
 
 ![CEIDG Captcha](https://i.imgur.com/iTujmQz.png)
 
-# What this project does?
+## What this project does?
 This project allows you to break Captcha located on CEIDG site with around 93.3% efficiency.
 
 ## How to compile project?
